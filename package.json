@@ -7,13 +7,10 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
-    "date-fns": "^3.6.0",
-    "gray-matter": "^4.0.3",
     "next": "latest",
     "react": "^19",
     "react-dom": "^19",
-    "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "yet-another-react-lightbox": "^3.21.6"
   },
   "devDependencies": {
     "@types/node": "^20.14.8",

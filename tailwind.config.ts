@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,29 +8,45 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       colors: {
-        "accent-1": "#FAFAFA",
-        "accent-2": "#EAEAEA",
-        "accent-7": "#333",
-        success: "#0070f3",
-        cyan: "#79FFE1",
+        // Sweet Temptations brand colors
+        primary: {
+          pink: '#ED9BB8',
+          'dark-pink': '#E88AAC',
+          'light-pink': '#F5D4E1',
+          teal: '#5DBFBD',
+          'dark-teal': '#4DA9A7',
+        },
+        background: {
+          'light-gray': '#F8F8F8',
+          'light-pink': '#FFF5F8',
+          pink: '#FFB6D1',
+        },
+        text: {
+          primary: '#333333',
+          secondary: '#666666',
+          light: '#999999',
+        },
+        border: {
+          light: '#E5E5E5',
+          medium: '#CCCCCC',
+          pink: '#ED9BB8',
+        },
+      },
+      fontFamily: {
+        // TODO: Uncomment after adding custom fonts (see FONTS.md)
+        // primary: ['Freight Sans Pro', 'system-ui', '-apple-system', 'sans-serif'],
+        // accent: ['Grafolita', 'Georgia', 'serif'],
+        
+        // Fallback fonts (currently active)
+        primary: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        accent: ['Georgia', 'Times New Roman', 'serif'],
       },
       spacing: {
         28: "7rem",
       },
       letterSpacing: {
         tighter: "-.04em",
-      },
-      fontSize: {
-        "5xl": "2.5rem",
-        "6xl": "2.75rem",
-        "7xl": "4.5rem",
-        "8xl": "6.25rem",
       },
       boxShadow: {
         sm: "0 5px 10px rgba(0, 0, 0, 0.12)",
