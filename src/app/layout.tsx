@@ -1,19 +1,22 @@
 import Footer from "@/app/_components/footer";
-import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
+import Header from "@/app/_components/layout/Header";
+import NotificationBar from "@/app/_components/layout/NotificationBar";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import cn from "classnames";
-import { ThemeSwitcher } from "./_components/theme-switcher";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+// TODO: Add custom fonts after purchasing from MyFonts
+// See FONTS.md for installation instructions
+// Once fonts are added, uncomment the font imports and update the className
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
+  title: "Sweet Temptations - Boutique Cakery | Whanganui, New Zealand",
+  description: "Sweet Temptations is a boutique cakery in Whanganui, New Zealand. We create personalised cakes, cupcakes, cookies and much more for weddings, birthdays, and all special occasions.",
   openGraph: {
-    images: [HOME_OG_IMAGE_URL],
+    title: "Sweet Temptations - Boutique Cakery",
+    description: "Personalised cakes, cupcakes, and cookies for all occasions in Whanganui, New Zealand",
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -23,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
         <link
           rel="apple-touch-icon"
@@ -46,22 +49,23 @@ export default function RootLayout({
         <link
           rel="mask-icon"
           href="/favicon/safari-pinned-tab.svg"
-          color="#000000"
+          color="#ED9BB8"
         />
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="msapplication-TileColor" content="#ED9BB8" />
         <meta
           name="msapplication-config"
           content="/favicon/browserconfig.xml"
         />
-        <meta name="theme-color" content="#000" />
-        <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+        <meta name="theme-color" content="#5DBFBD" />
       </head>
       <body
-        className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
+        className={cn("font-primary text-text-primary bg-white")}
       >
-        <ThemeSwitcher />
-        <div className="min-h-screen">{children}</div>
+        <NotificationBar />
+        <Header />
+        {/* Add top padding to account for fixed header and notification bar */}
+        <div className="min-h-screen pt-[15rem] md:pt-[14rem]">{children}</div>
         <Footer />
       </body>
     </html>
