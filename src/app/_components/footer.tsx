@@ -37,7 +37,7 @@ export function Footer() {
               </li>
               <li className="footer__nav-item">
                 <Link href="/gallery" className="hover:underline transition-all">
-                  Terms & Conditions
+                  Gallery
                 </Link>
               </li>
               <li className="footer__nav-item">

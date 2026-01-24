@@ -1,4 +1,13 @@
+"use client";
+
 export default function ContactPage() {
+  // TODO: Implement form submission logic
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Form submission will be implemented here
+    console.log("Form submission handler to be implemented");
+  };
+
   return (
     <main className="contact-page">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -140,7 +149,7 @@ export default function ContactPage() {
             </h2>
 
             {/* TODO: Implement form submission logic */}
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               {/* Name */}
               <div className="form-field">
                 <label

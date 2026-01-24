@@ -148,9 +148,9 @@ export default function HomePage() {
             <Button href="/gallery" variant="secondary">
               View Gallery
             </Button>
-            <button className="inline-block px-8 py-3 bg-white text-[#ED9BB8] rounded-md font-medium hover:bg-gray-100 transition-colors">
+            <Button href="/contact-us" className="bg-white text-[#ED9BB8] hover:bg-gray-100">
               Contact Us
-            </button>
+            </Button>
           </div>
         </div>
       </section>
