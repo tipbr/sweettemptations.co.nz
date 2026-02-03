@@ -1,0 +1,27 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{njk,html,md,js}",
+    "./src/_includes/**/*.{njk,html}"
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Brand colors
+        'brand-pink': '#ED9BB8',
+        'brand-teal': '#5DBFBD',
+        'brand-pink-light': '#FFB6D1',
+        'brand-pink-lighter': '#F5D4E1',
+        
+        // Text colors
+        'text-primary': '#333333',
+        'text-secondary': '#666666',
+      },
+      fontFamily: {
+        'primary': ['Freight Sans Pro', 'Arial', 'sans-serif'],
+        'accent': ['Grafolita', 'Georgia', 'serif'],
+      },
+    },
+  },
+  plugins: [],
+}
