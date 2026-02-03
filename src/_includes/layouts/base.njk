@@ -29,8 +29,7 @@
   {% include "components/notification-bar.njk" %}
   {% include "components/header.njk" %}
   
-  <!-- Add top padding to account for fixed header and notification bar -->
-  <div class="min-h-screen pt-[15rem] md:pt-[14rem]">
+  <div class="min-h-screen">
     {{ content | safe }}
   </div>
   
