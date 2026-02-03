@@ -1,72 +1,130 @@
-# A statically generated blog example using Next.js, Markdown, and TypeScript
+# Sweet Temptations - Boutique Cakery Website
 
-This is the existing [blog-starter](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) plus TypeScript.
+A static website for Sweet Temptations, a boutique cakery in Whanganui, New Zealand. Built with [Eleventy (11ty)](https://www.11ty.dev/) and [Tailwind CSS](https://tailwindcss.com).
 
-This example showcases Next.js's [Static Generation](https://nextjs.org/docs/app/building-your-application/routing/layouts-and-templates) feature using Markdown files as the data source.
+## About
 
-The blog posts are stored in `/_posts` as Markdown files with front matter support. Adding a new Markdown file in there will create a new blog post.
+Sweet Temptations creates personalised cakes, cupcakes, cookies and more for weddings, birthdays, and all special occasions in the Whanganui region.
 
-To create the blog posts we use [`remark`](https://github.com/remarkjs/remark) and [`remark-html`](https://github.com/remarkjs/remark-html) to convert the Markdown files into an HTML string, and then send it down as a prop to the page. The metadata of every post is handled by [`gray-matter`](https://github.com/jonschlinkert/gray-matter) and also sent in props to the page.
+## Tech Stack
 
-## Demo
+- **Static Site Generator**: [Eleventy (11ty)](https://www.11ty.dev/) v3.1.2
+- **Styling**: [Tailwind CSS](https://tailwindcss.com) v3.4.4
+- **Template Engine**: Nunjucks
+- **Deployment**: GitHub Pages via GitHub Actions
 
-[https://next-blog-starter.vercel.app/](https://next-blog-starter.vercel.app/)
+## Getting Started
 
-## Deploy your own
+### Prerequisites
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/blog-starter&project-name=blog-starter&repository-name=blog-starter)
+- Node.js 20.x or higher
+- npm
 
-### Related examples
+### Installation
 
-- [AgilityCMS](/examples/cms-agilitycms)
-- [Builder.io](/examples/cms-builder-io)
-- [ButterCMS](/examples/cms-buttercms)
-- [Contentful](/examples/cms-contentful)
-- [Cosmic](/examples/cms-cosmic)
-- [DatoCMS](/examples/cms-datocms)
-- [DotCMS](/examples/cms-dotcms)
-- [Drupal](/examples/cms-drupal)
-- [Enterspeed](/examples/cms-enterspeed)
-- [Ghost](/examples/cms-ghost)
-- [GraphCMS](/examples/cms-graphcms)
-- [Kontent.ai](/examples/cms-kontent-ai)
-- [MakeSwift](/examples/cms-makeswift)
-- [Payload](/examples/cms-payload)
-- [Plasmic](/examples/cms-plasmic)
-- [Prepr](/examples/cms-prepr)
-- [Prismic](/examples/cms-prismic)
-- [Sanity](/examples/cms-sanity)
-- [Sitecore XM Cloud](/examples/cms-sitecore-xmcloud)
-- [Sitefinity](/examples/cms-sitefinity)
-- [Storyblok](/examples/cms-storyblok)
-- [TakeShape](/examples/cms-takeshape)
-- [Tina](/examples/cms-tina)
-- [Umbraco](/examples/cms-umbraco)
-- [Umbraco heartcore](/examples/cms-umbraco-heartcore)
-- [Webiny](/examples/cms-webiny)
-- [WordPress](/examples/cms-wordpress)
-- [Blog Starter](/examples/blog-starter)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
+1. Clone the repository:
 ```bash
-npx create-next-app --example blog-starter blog-starter-app
+git clone https://github.com/tipbr/sweettemptations.co.nz.git
+cd sweettemptations.co.nz
 ```
 
+2. Install dependencies:
 ```bash
-yarn create next-app --example blog-starter blog-starter-app
+npm install
 ```
 
+### Development
+
+Run the development server with live reload:
+
 ```bash
-pnpm create next-app --example blog-starter blog-starter-app
+npm run dev
 ```
 
-Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
+This will:
+- Start the Eleventy dev server at [http://localhost:8080](http://localhost:8080)
+- Watch for CSS changes and rebuild Tailwind CSS automatically
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+The site will automatically reload when you make changes to templates or content.
 
-# Notes
+### Building for Production
 
-`blog-starter` uses [Tailwind CSS](https://tailwindcss.com) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3).
+Build the site for production:
+
+```bash
+npm run build
+```
+
+This will:
+1. Build and minify Tailwind CSS
+2. Generate the static site in the `_site` directory
+
+The built site in `_site` is ready to be deployed to any static hosting service.
+
+## Project Structure
+
+```
+sweettemptations.co.nz/
+├── src/                      # Source files
+│   ├── _includes/           # Reusable templates
+│   │   ├── components/      # Component templates (header, footer, etc.)
+│   │   └── layouts/         # Layout templates
+│   ├── _data/              # Global data files (JSON)
+│   ├── styles/             # CSS files
+│   │   ├── main.css        # Main Tailwind CSS file
+│   │   └── output.css      # Generated CSS (gitignored)
+│   ├── index.njk           # Home page
+│   ├── gallery.njk         # Gallery page
+│   ├── faqs.njk            # FAQs page
+│   ├── contact-us.njk      # Contact page
+│   └── price-list.njk      # Price list page
+├── public/                  # Static assets (images, fonts, etc.)
+├── _site/                   # Generated site (gitignored)
+├── .eleventy.js            # Eleventy configuration
+├── tailwind.config.ts      # Tailwind CSS configuration
+└── package.json            # Dependencies and scripts
+```
+
+## Deployment
+
+The site is automatically deployed to GitHub Pages when changes are pushed to the `main` branch via GitHub Actions.
+
+### GitHub Pages Setup
+
+1. Go to repository Settings → Pages
+2. Source: GitHub Actions
+3. The workflow will automatically build and deploy on push to `main`
+
+The site will be available at: `https://tipbr.github.io/sweettemptations.co.nz/`
+
+For a custom domain, see [GitHub Pages documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+
+## Available Scripts
+
+- `npm run dev` - Start development server with live reload
+- `npm run build` - Build the site for production
+- `npm run build:css` - Build and minify Tailwind CSS
+- `npm run build:eleventy` - Build the 11ty site
+- `npm start` - Start the Eleventy server (alias for dev)
+
+## Adding Content
+
+### Adding FAQs
+
+Edit `src/_data/faqs.json` and add new FAQ items:
+
+```json
+{
+  "id": 3,
+  "question": "Your question here?",
+  "answer": "Your answer here."
+}
+```
+
+### Adding Gallery Images
+
+Place images in `public/gallery/` and update the gallery array in `src/gallery.njk`.
+
+## License
+
+© 2018 - 2026 Sweet Temptations. All rights reserved.
