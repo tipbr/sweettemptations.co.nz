@@ -20,6 +20,10 @@
 # production
 /build
 
+# 11ty
+/_site/
+src/styles/output.css
+
 # misc
 .DS_Store
 *.pem
