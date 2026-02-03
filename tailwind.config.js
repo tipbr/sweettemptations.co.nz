@@ -8,8 +8,8 @@ module.exports = {
     extend: {
       colors: {
         // Brand colors
-        'brand-pink': '#ED9BB8',
-        'brand-teal': '#5DBFBD',
+        'brand-pink': '#fa7598',
+        'brand-teal': '#62cbc9',
         'brand-pink-light': '#FFB6D1',
         'brand-pink-lighter': '#F5D4E1',
         
@@ -18,8 +18,8 @@ module.exports = {
         'text-secondary': '#666666',
       },
       fontFamily: {
-        'primary': ['Freight Sans Pro', 'Arial', 'sans-serif'],
-        'accent': ['Grafolita', 'Georgia', 'serif'],
+        'primary': ['Montserrat', 'Arial', 'sans-serif'],
+        'accent': ['Cookie', 'Georgia', 'cursive'],
       },
     },
   },
