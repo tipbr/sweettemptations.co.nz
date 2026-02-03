@@ -1,12 +1,62 @@
 [
   {
     "id": 1,
-    "question": "What are your delivery options?",
-    "answer": "We offer free delivery within Whanganui City limits for all orders. For areas outside the city limits, please contact us for delivery options and pricing."
+    "question": "What is a tiered cake?",
+    "answer": "A tiered cake is a cake with multiple layers stacked on top of each other, creating different levels. Each tier can be a different size and flavor, and they're often used for weddings and special celebrations."
   },
   {
     "id": 2,
-    "question": "How far in advance should I order?",
-    "answer": "We recommend placing orders at least 48 hours in advance for custom cakes and special occasion items. For standard items, 24 hours notice is appreciated but same-day orders may be accommodated depending on availability."
+    "question": "How should I store my cake?",
+    "answer": "Store your cake in a cool, dry place away from direct sunlight. If your cake has fresh cream or perishable fillings, it should be refrigerated. For best results, bring the cake to room temperature before serving."
+  },
+  {
+    "id": 3,
+    "question": "Where are you located?",
+    "answer": "We are located in Whanganui, New Zealand."
+  },
+  {
+    "id": 4,
+    "question": "Do you deliver?",
+    "answer": "Yes! We offer free delivery within Whanganui city limits for all orders. For deliveries outside the city limits, please contact us to discuss options."
+  },
+  {
+    "id": 5,
+    "question": "What are your hours?",
+    "answer": "We operate Thursday, Friday, and Saturday with flexible hours. Please contact us to arrange a consultation or pickup time that works for you."
+  },
+  {
+    "id": 6,
+    "question": "How soon do I have to pay?",
+    "answer": "We require a 50% deposit to secure your order. The remaining balance is due within 4 days of your event or pickup date."
+  },
+  {
+    "id": 7,
+    "question": "Can I supply my own decorations?",
+    "answer": "Yes, you're welcome to provide your own decorations! Alternatively, we can source decorations for you at an additional cost."
+  },
+  {
+    "id": 8,
+    "question": "What cakes do you make?",
+    "answer": "We specialize in custom cakes with American buttercream frosting. We occasionally use fondant accents for special designs. Please note that we do not make novelty cakes."
+  },
+  {
+    "id": 9,
+    "question": "Is your kitchen registered?",
+    "answer": "Yes, our kitchen is registered with the Whanganui District Council and meets all health and safety requirements."
+  },
+  {
+    "id": 10,
+    "question": "How do I transport a cake?",
+    "answer": "We provide delivery for your convenience. If you prefer to pick up your cake, we recommend placing it on a flat surface in your vehicle, such as the floor or boot, and driving carefully to avoid any movement."
+  },
+  {
+    "id": 11,
+    "question": "Where is best to sit my cake?",
+    "answer": "Display your cake in a sheltered area, out of direct sunlight, and in a cool location. This will help maintain the cake's appearance and freshness throughout your event."
+  },
+  {
+    "id": 12,
+    "question": "Do you offer shipping?",
+    "answer": "Currently, we offer limited shipping for cookies only. Please contact us for more information about shipping options."
   }
 ]
