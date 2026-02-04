@@ -4,10 +4,10 @@
       class="footer__content flex flex-col md:flex-row items-center justify-between">
       <!-- Logo -->
       <div class="footer__logo mb-8 md:mb-0">
-        <a href="/">
+        <a href="{{ '/' | url }}">
           <div class="flex flex-col items-center md:items-start">
             <div class="w-16 h-16 mb-2 rounded-full flex items-center justify-center">
-              <img src="/assets/logos/Sweet-Temptations-Logo-White.png" alt="Sweet Temptations Logo" class="w-12 h-12 object-contain">
+              <img src="{{ '/assets/logos/Sweet-Temptations-Logo-White.png' | url }}" alt="Sweet Temptations Logo" class="w-12 h-12 object-contain">
             </div>
           </div>
         </a>
@@ -16,16 +16,16 @@
       <nav class="footer__nav mb-8 md:mb-0" aria-label="Footer navigation">
         <ul class="footer__nav-list flex flex-wrap justify-center space-x-6 text-sm md:text-base">
           <li class="footer__nav-item">
-            <a href="/price-list/" class="hover:underline transition-all">Price List</a>
+            <a href="{{ '/price-list/' | url }}" class="hover:underline transition-all">Price List</a>
           </li>
           <li class="footer__nav-item">
-            <a href="/faqs/" class="hover:underline transition-all">FAQs</a>
+            <a href="{{ '/faqs/' | url }}" class="hover:underline transition-all">FAQs</a>
           </li>
           <li class="footer__nav-item">
-            <a href="/gallery/" class="hover:underline transition-all">Gallery</a>
+            <a href="{{ '/gallery/' | url }}" class="hover:underline transition-all">Gallery</a>
           </li>
           <li class="footer__nav-item">
-            <a href="/contact-us/" class="hover:underline transition-all">Contact us</a>
+            <a href="{{ '/contact-us/' | url }}" class="hover:underline transition-all">Contact us</a>
           </li>
         </ul>
       </nav>

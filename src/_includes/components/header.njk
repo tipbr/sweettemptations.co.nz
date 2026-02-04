@@ -3,11 +3,11 @@
     <!-- Logo and Navigation Container -->
     <div class="header__content flex flex-col items-center py-4">
       <!-- Logo -->
-      <a href="/" class="header__logo mb-4">
+      <a href="{{ '/' | url }}" class="header__logo mb-4">
         <div class="flex flex-col items-center">
           <!-- Logo Icon -->
           <div class="header__logo-icon w-20 h-20 mb-2 rounded-full flex items-center justify-center">
-            <img src="/assets/logos/Sweet-Temptations-Logo-Green.png" alt="Sweet Temptations Logo" class="object-contain">
+            <img src="{{ '/assets/logos/Sweet-Temptations-Logo-Green.png' | url }}" alt="Sweet Temptations Logo" class="object-contain">
           </div>
           <!-- Logo Text -->
           <div class="header__logo-text text-center">
@@ -28,19 +28,19 @@
       <nav class="header__nav hidden md:block" aria-label="Main navigation">
         <ul class="header__nav-list flex items-center justify-center space-x-8">
           <li class="header__nav-item">
-            <a href="/" class="header__nav-link text-gray-700 hover:text-[#fa7598] transition-colors text-base font-medium">Home</a>
+            <a href="{{ '/' | url }}" class="header__nav-link text-gray-700 hover:text-[#fa7598] transition-colors text-base font-medium">Home</a>
           </li>
           <li class="header__nav-item">
-            <a href="/faqs/" class="header__nav-link text-gray-700 hover:text-[#fa7598] transition-colors text-base font-medium">FAQs</a>
+            <a href="{{ '/faqs/' | url }}" class="header__nav-link text-gray-700 hover:text-[#fa7598] transition-colors text-base font-medium">FAQs</a>
           </li>
           <li class="header__nav-item">
-            <a href="/price-list/" class="header__nav-link text-gray-700 hover:text-[#fa7598] transition-colors text-base font-medium">Price List</a>
+            <a href="{{ '/price-list/' | url }}" class="header__nav-link text-gray-700 hover:text-[#fa7598] transition-colors text-base font-medium">Price List</a>
           </li>
           <li class="header__nav-item">
-            <a href="/gallery/" class="header__nav-link text-gray-700 hover:text-[#fa7598] transition-colors text-base font-medium">Gallery</a>
+            <a href="{{ '/gallery/' | url }}" class="header__nav-link text-gray-700 hover:text-[#fa7598] transition-colors text-base font-medium">Gallery</a>
           </li>
           <li class="header__nav-item">
-            <a href="/contact-us/" class="header__nav-link text-gray-700 hover:text-[#fa7598] transition-colors text-base font-medium">Contact us</a>
+            <a href="{{ '/contact-us/' | url }}" class="header__nav-link text-gray-700 hover:text-[#fa7598] transition-colors text-base font-medium">Contact us</a>
           </li>
           <!-- Social Icons -->
           <li class="header__nav-item flex space-x-3 ml-4">
@@ -71,19 +71,19 @@
     <nav id="mobile-menu" class="header__mobile-nav md:hidden border-t border-gray-200 py-4 hidden" aria-label="Mobile navigation">
       <ul class="header__mobile-nav-list space-y-2">
         <li class="header__mobile-nav-item">
-          <a href="/" class="header__mobile-nav-link block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#fa7598] transition-colors">Home</a>
+          <a href="{{ '/' | url }}" class="header__mobile-nav-link block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#fa7598] transition-colors">Home</a>
         </li>
         <li class="header__mobile-nav-item">
-          <a href="/faqs/" class="header__mobile-nav-link block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#fa7598] transition-colors">FAQs</a>
+          <a href="{{ '/faqs/' | url }}" class="header__mobile-nav-link block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#fa7598] transition-colors">FAQs</a>
         </li>
         <li class="header__mobile-nav-item">
-          <a href="/price-list/" class="header__mobile-nav-link block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#fa7598] transition-colors">Price List</a>
+          <a href="{{ '/price-list/' | url }}" class="header__mobile-nav-link block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#fa7598] transition-colors">Price List</a>
         </li>
         <li class="header__mobile-nav-item">
-          <a href="/gallery/" class="header__mobile-nav-link block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#fa7598] transition-colors">Gallery</a>
+          <a href="{{ '/gallery/' | url }}" class="header__mobile-nav-link block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#fa7598] transition-colors">Gallery</a>
         </li>
         <li class="header__mobile-nav-item">
-          <a href="/contact-us/" class="header__mobile-nav-link block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#fa7598] transition-colors">Contact us</a>
+          <a href="{{ '/contact-us/' | url }}" class="header__mobile-nav-link block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#fa7598] transition-colors">Contact us</a>
         </li>
       </ul>
       <div class="header__mobile-social flex justify-center space-x-6 mt-4 pt-4 border-t border-gray-200">
