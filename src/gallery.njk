@@ -81,7 +81,8 @@ description: Browse our collection of custom cakes, cupcakes, cookies and more. 
     }
 
     function closeLightbox(event) {
-      if (event.target.id === 'lightbox' || event.target.tagName === 'BUTTON') {
+      // Only close if clicking on the backdrop or the close button specifically
+      if (event.target.id === 'lightbox' || (event.target.tagName === 'BUTTON' && event.target.getAttribute('aria-label') === 'Close lightbox')) {
         const lightbox = document.getElementById('lightbox');
         lightbox.classList.add('hidden');
         document.body.style.overflow = '';
