@@ -22,9 +22,9 @@ description: Browse our collection of custom cakes, cupcakes, cookies and more. 
       <div class="gallery__grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {% for image in gallery %}
         <div class="gallery__item group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-          <div class="gallery__image-wrapper relative aspect-square bg-gray-200">
+          <div class="gallery__image-wrapper relative aspect-square bg-gray-200 cursor-pointer" onclick="openLightbox({{ loop.index0 }})">
             <img 
-              src="{{ image.path }}" 
+              src="{{ image.path | url }}" 
               alt="{{ image.alt }}"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               loading="lazy"
@@ -40,4 +40,88 @@ description: Browse our collection of custom cakes, cupcakes, cookies and more. 
       </div>
     </div>
   </div>
+
+  {# Lightbox Modal #}
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4" onclick="closeLightbox(event)">
+    <button onclick="closeLightbox(event)" class="absolute top-4 right-4 text-white text-4xl font-bold hover:text-gray-300 z-60" aria-label="Close lightbox">&times;</button>
+    <button onclick="previousImage(event)" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-5xl font-bold hover:text-gray-300 z-60" aria-label="Previous image">&#8249;</button>
+    <button onclick="nextImage(event)" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-5xl font-bold hover:text-gray-300 z-60" aria-label="Next image">&#8250;</button>
+    <div class="max-w-6xl max-h-full flex items-center justify-center">
+      <img id="lightbox-image" src="" alt="" class="max-w-full max-h-[90vh] object-contain">
+    </div>
+    <div id="lightbox-caption" class="absolute bottom-4 left-0 right-0 text-center text-white text-lg"></div>
+  </div>
+
+  {# Lightbox JavaScript #}
+  <script>
+    const galleryImages = [
+      {% for image in gallery %}
+      {
+        src: "{{ image.path | url }}",
+        alt: "{{ image.alt }}",
+        title: "{{ image.title }}"
+      }{{ "," if not loop.last }}
+      {% endfor %}
+    ];
+    
+    let currentImageIndex = 0;
+
+    function openLightbox(index) {
+      currentImageIndex = index;
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      
+      lightboxImage.src = galleryImages[currentImageIndex].src;
+      lightboxImage.alt = galleryImages[currentImageIndex].alt;
+      lightboxCaption.textContent = galleryImages[currentImageIndex].title;
+      
+      lightbox.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(event) {
+      if (event.target.id === 'lightbox' || event.target.tagName === 'BUTTON') {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function nextImage(event) {
+      event.stopPropagation();
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      const lightboxImage = document.getElementById('lightbox-image');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      
+      lightboxImage.src = galleryImages[currentImageIndex].src;
+      lightboxImage.alt = galleryImages[currentImageIndex].alt;
+      lightboxCaption.textContent = galleryImages[currentImageIndex].title;
+    }
+
+    function previousImage(event) {
+      event.stopPropagation();
+      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      const lightboxImage = document.getElementById('lightbox-image');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      
+      lightboxImage.src = galleryImages[currentImageIndex].src;
+      lightboxImage.alt = galleryImages[currentImageIndex].alt;
+      lightboxCaption.textContent = galleryImages[currentImageIndex].title;
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(event) {
+      const lightbox = document.getElementById('lightbox');
+      if (!lightbox.classList.contains('hidden')) {
+        if (event.key === 'ArrowRight') {
+          nextImage(event);
+        } else if (event.key === 'ArrowLeft') {
+          previousImage(event);
+        } else if (event.key === 'Escape') {
+          closeLightbox(event);
+        }
+      }
+    });
+  </script>
 </main>

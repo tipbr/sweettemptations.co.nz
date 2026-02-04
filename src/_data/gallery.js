@@ -45,6 +45,7 @@ module.exports = function() {
   ];
 
   // Process images to add path and default alt text
+  // Note: Path is relative here, will be prefixed by url filter in template
   return images.map(image => ({
     filename: image.filename,
     path: `/gallery/${image.filename}`,

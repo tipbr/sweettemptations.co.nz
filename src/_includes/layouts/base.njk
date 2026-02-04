@@ -9,21 +9,32 @@
   <!-- Open Graph -->
   <meta property="og:title" content="{{ title or "Sweet Temptations - Boutique Cakery" }}">
   <meta property="og:description" content="{{ description or "Personalised cakes, cupcakes, and cookies for all occasions in Whanganui, New Zealand" }}">
-  <meta property="og:image" content="/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sweettemptations.co.nz{{ page.url }}">
+  <meta property="og:image" content="https://sweettemptations.co.nz/assets/logos/Sweet-Temptations-Logo-Green.png">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or "Sweet Temptations - Boutique Cakery" }}">
+  <meta name="twitter:description" content="{{ description or "Personalised cakes, cupcakes, and cookies for all occasions in Whanganui, New Zealand" }}">
+  <meta name="twitter:image" content="https://sweettemptations.co.nz/assets/logos/Sweet-Temptations-Logo-Green.png">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://sweettemptations.co.nz{{ page.url }}">
   
   <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
-  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#fa7598">
-  <link rel="shortcut icon" href="/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/favicon/apple-touch-icon.png' | url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon/favicon-32x32.png' | url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon/favicon-16x16.png' | url }}">
+  <link rel="manifest" href="{{ '/favicon/site.webmanifest' | url }}">
+  <link rel="mask-icon" href="{{ '/favicon/safari-pinned-tab.svg' | url }}" color="#fa7598">
+  <link rel="shortcut icon" href="{{ '/favicon/favicon.ico' | url }}">
   <meta name="msapplication-TileColor" content="#fa7598">
-  <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+  <meta name="msapplication-config" href="{{ '/favicon/browserconfig.xml' | url }}">
   <meta name="theme-color" content="#62cbc9">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="/styles/output.css">
+  <link rel="stylesheet" href="{{ '/styles/output.css' | url }}">
   <style>
     html, body {
       height: 100%;
@@ -52,6 +63,37 @@
   </div>
   
   {% include "components/footer.njk" %}
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Sweet Temptations",
+    "description": "Boutique cakery creating personalised cakes, cupcakes, cookies and more for weddings, birthdays, and all special occasions",
+    "url": "https://sweettemptations.co.nz",
+    "logo": "https://sweettemptations.co.nz/assets/logos/Sweet-Temptations-Logo-Green.png",
+    "image": "https://sweettemptations.co.nz/assets/logos/Sweet-Temptations-Logo-Green.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Whanganui",
+      "addressRegion": "Manawatu-Wanganui",
+      "addressCountry": "NZ"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-39.9308",
+      "longitude": "175.0478"
+    },
+    "priceRange": "$$",
+    "servesCuisine": "Bakery",
+    "hasMenu": "https://sweettemptations.co.nz/price-list/",
+    "sameAs": [
+      "https://www.facebook.com/sweettemptationsnz",
+      "https://www.instagram.com/sweettemptationsnz/"
+    ]
+  }
+  </script>
   
   <!-- Mobile menu toggle script -->
   <script>

@@ -17,6 +17,9 @@ module.exports = function(eleventyConfig) {
     },
     templateFormats: ["njk", "html", "md"],
     htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk"
+    markdownTemplateEngine: "njk",
+    // Set path prefix for GitHub Pages project sites
+    // This will be empty string once custom domain is configured
+    pathPrefix: "/sweettemptations.co.nz/"
   };
 };
